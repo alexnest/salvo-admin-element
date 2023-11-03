@@ -23,6 +23,7 @@ router.beforeEach((to, from, next) => {
         isRelogin.show = true
         // 判断当前用户是否已拉取完user_info信息
         store.dispatch('GetInfo').then(() => {
+          console.log('GetInfo')
           isRelogin.show = false
           store.dispatch('GenerateRoutes').then(accessRoutes => {
             // 根据roles权限生成可访问的路由表
